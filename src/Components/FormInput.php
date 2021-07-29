@@ -9,7 +9,8 @@ class FormInput extends Component
 
     public string $name;
     public string $label;
-    public string $type;
+    public string $type;    
+    public string $required;/** william */    
 
     public $value;
 
@@ -21,7 +22,8 @@ class FormInput extends Component
     public function __construct(
         string $name,
         string $label = '',
-        string $type = 'text',
+        string $type = 'text',        
+        string $required = '',/** william */        
         $bind = null,
         $default = null,
         $language = null,
@@ -30,6 +32,7 @@ class FormInput extends Component
         $this->name       = $name;
         $this->label      = $label;
         $this->type       = $type;
+        $this->required   = $required;
         $this->showErrors = $showErrors;
 
         if ($language) {
