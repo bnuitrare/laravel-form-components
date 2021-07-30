@@ -70,5 +70,5 @@
                 "type": "vcs",
                 "url": "https://github.com/bnuitrare/laravel-form-components.git"
             }
-    ],
+    ]
 }
