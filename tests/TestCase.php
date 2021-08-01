@@ -10,6 +10,7 @@ use ProtoneMedia\LaravelFormComponents\Support\ServiceProvider;
 
 abstract class TestCase extends BaseTestCase
 {
+    //test
     protected $baseUrl = 'http://localhost';
 
     public function setUp(): void
