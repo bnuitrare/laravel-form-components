@@ -11,6 +11,7 @@ class FormInput extends Component
     public string $label;
     public string $type;    
     public string $required;/** william */    
+    public bool $dark;/** william */    
 
     public $value;
 
@@ -24,6 +25,7 @@ class FormInput extends Component
         string $label = '',
         string $type = 'text',        
         string $required = '',/** william */        
+        bool $dark = false,/** william */        
         $bind = null,
         $default = null,
         $language = null,
@@ -33,6 +35,7 @@ class FormInput extends Component
         $this->label      = $label;
         $this->type       = $type;
         $this->required   = $required;
+        $this->dark   = $dark;
         $this->showErrors = $showErrors;
 
         if ($language) {
