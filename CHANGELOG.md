@@ -2,6 +2,52 @@
 
 All notable changes to `laravel-form-components` will be documented in this file
 
+## 3.6.0 - 2022-02-04
+
+- Support for Laravel 9
+
+## 3.5.1 - 2022-01-05
+
+- Fix for falsy default select values
+- Fix for overriding the `default_wire` configuration with a `@wire` directive
+
+## 3.5.0 - 2022-01-05
+
+- Added `default_wire` configuration
+- Fix for overriding `wire:model` attribute
+
+## 3.4.0 - 2022-01-04
+
+- Added `tailwind-forms-simple` views
+
+## 3.3.1 - 2021-12-22
+
+- Ensure nested properties uses dot notation
+
+## 3.3.0 - 2021-12-19
+
+- Support for PHP 8.1
+- Dropped support for Laravel 7
+
+## 3.2.0 - 2021-11-01
+
+- Support for `select` placeholder
+
+## 3.1.0 - 2021-11-01
+
+- Support for Date Casting
+- Support for checkboxes where the bound value is Arrayable
+- Bugfix for default `0` values
+- Bootstrap 4 validation structure fix
+
+## 3.0.1 - 2021-09-08
+
+- Added name attribute when element is wired
+
+## 3.0.0 - 2021-09-08
+
+- Support for Bootstrap 5
+
 ## 2.5.4 - 2020-02-15
 
 - Bugfix for old nested data

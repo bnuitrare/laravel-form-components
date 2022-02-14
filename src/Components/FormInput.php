@@ -9,7 +9,9 @@ class FormInput extends Component
 
     public string $name;
     public string $label;
-    public string $type;    
+
+    public string $type;
+    public bool $floating;
     public string $required;/** william */    
     public bool $dark;/** william */    
 
@@ -29,7 +31,8 @@ class FormInput extends Component
         $bind = null,
         $default = null,
         $language = null,
-        bool $showErrors = true
+        bool $showErrors = true,
+        bool $floating = false
     ) {
         $this->name       = $name;
         $this->label      = $label;
@@ -37,6 +40,7 @@ class FormInput extends Component
         $this->required   = $required;
         $this->dark   = $dark;
         $this->showErrors = $showErrors;
+        $this->floating   = $floating && $type !== 'hidden';
 
         if ($language) {
             $this->name = "{$name}[{$language}]";

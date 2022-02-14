@@ -24,6 +24,15 @@ class BindTest extends TestCase
     }
 
     /** @test */
+    public function it_sets_the_right_value_if_the_value_is_zero()
+    {
+        $this->registerTestRoute('bind-target-zero-value');
+
+        $this->visit('/bind-target-zero-value')
+            ->seeElement('input[name="input"][value="0"]');
+    }
+
+    /** @test */
     public function it_overrides_the_bound_target_with_the_old_request_data()
     {
         $this->registerTestRoute('bound-with-validation-errors', function (Request $request) {
@@ -87,11 +96,26 @@ class BindTest extends TestCase
         $this->visit('/default-values-with-bound-target')
             ->seeElement('input[name="input"][value="a"]')
             ->seeInElement('textarea[name="textarea"]', 'b')
-            ->seeElement('option[value="c"]:selected')
+            ->seeElement('option[value="f"]:selected')
             ->seeElement('input[name="checkbox"]')
             ->dontSeeElement('input[name="checkbox"]:checked')
             ->seeElement('input[name="radio"]')
             ->dontSeeElement('input[name="radio"]:checked');
+    }
+
+    /** @test */
+    public function it_overrides_the_default_value_when_nested()
+    {
+        $this->registerTestRoute('default-values-with-nested-bound-target');
+
+        $this->visit('/default-values-with-nested-bound-target')
+            ->seeElement('input[name="nested[input]"][value="a"]')
+            ->seeInElement('textarea[name="nested[textarea]"]', 'b')
+            ->seeElement('select[name="nested[select]"] > option[value="f"]:selected')
+            ->seeElement('input[name="nested[checkbox]"]')
+            ->dontSeeElement('input[name="nested[checkbox]"]:checked')
+            ->seeElement('input[name="nested[radio]"]')
+            ->dontSeeElement('input[name="nested[radio]"]:checked');
     }
 
     /** @test */
